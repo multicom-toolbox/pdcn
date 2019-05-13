@@ -1,0 +1,7 @@
+Everyting is running here.
+
+The three jobs running on clark, added, euk 1 and 2 have bugs. the line 91, WRITE, should be WRITE 2
+
+Swissprot change fasta format, the substr(3, 6) is the AC number
+
+These are not corrected in the version running on clark
