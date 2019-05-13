@@ -49,6 +49,7 @@ wget http://purl.obolibrary.org/obo/go/go-basic.obo
 ```
 
 **(D) Test**
+```
 cd scripts
 mkdir -p ./test/2SN3-A/sequence ./test/2SN3-A/Blast_output
 
@@ -59,6 +60,5 @@ perl get_swiss.pl ./test/2SN3-A.fasta ./test/2SN3-A/2SN3-A_function.txt ./test/2
 (2) Run prediction
 perl get_function.pl ./test/2SN3-A/2SN3-A_function.txt ./database/go-basic.obo ./test/2SN3-A/2SN3-A_functionnew.txt
 perl getGeneforFunction.pl ./test/2SN3-A/2SN3-A_functionnew.txt ./test/2SN3-A/2SN3-A_function.txt ./test/2SN3-A/2SN3-A_functionnewnew.txt
-
 ```
 
