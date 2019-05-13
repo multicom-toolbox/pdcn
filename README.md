@@ -48,17 +48,41 @@ wget http://purl.obolibrary.org/obo/go/go-basic.obo
 
 ```
 
-**(D) Test**
+
+**(D) Configuration**
 ```
-cd scripts
+perl configure.pl
+```
+
+
+**(E) Test**
+```
 mkdir -p ./test/2SN3-A/sequence ./test/2SN3-A/Blast_output
 
 (1) Run blast
-perl exe_swiss.pl ./test/2SN3-A.fasta ./test/2SN3-A/sequence ./test/2SN3-A/Blast_output
-perl get_swiss.pl ./test/2SN3-A.fasta ./test/2SN3-A/2SN3-A_function.txt ./test/2SN3-A/Blast_output
+perl scripts/exe_swiss.pl ./test/2SN3-A.fasta ./test/2SN3-A/sequence ./test/2SN3-A/Blast_output
 
 (2) Run prediction
-perl get_function.pl ./test/2SN3-A/2SN3-A_function.txt ./database/go-basic.obo ./test/2SN3-A/2SN3-A_functionnew.txt
-perl getGeneforFunction.pl ./test/2SN3-A/2SN3-A_functionnew.txt ./test/2SN3-A/2SN3-A_function.txt ./test/2SN3-A/2SN3-A_functionnewnew.txt
+perl scripts/get_swiss.pl ./test/2SN3-A.fasta ./test/2SN3-A/2SN3-A_function.txt ./test/2SN3-A/Blast_output
+perl scripts/get_function.pl ./test/2SN3-A/2SN3-A_function.txt ./database/go-basic.obo ./test/2SN3-A/2SN3-A_functionnew.txt
 ```
 
+output
+
+``
+>2SN3-A
+KEGYLVKKSDGAKYGXLKLGENEGCDTEDKAKNQGGSYGYXYAFACWDEGLPESTPTYPLPNKSA
+GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.
+GO:0008200; F:ion channel inhibitor activity; IEA:InterPro.
+GO:0090729; F:toxin activity; IEA:UniProtKB-KW.
+GO:0006952; P:defense response; IEA:InterPro.
+``
+
+
+**(F) Run everything**
+```
+perl run_pdcn.pl  <sequence> <output directory>
+
+Example:
+perl run_pdcn.pl  test/2SN3-A.fasta  test/out
+``` 

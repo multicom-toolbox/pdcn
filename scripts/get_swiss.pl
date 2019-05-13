@@ -15,7 +15,7 @@ open(FILE, "$in") || die("Couldn't read file $in\n");
 @array=<FILE>;
 close FILE;
 
-open(OUTFILE, ">>$out") || die("Couldn't open file $out\n"); 
+open(OUTFILE, ">$out") || die("Couldn't open file $out\n"); 
 
 my $name="";
 foreach $line (@array) 

@@ -20,7 +20,7 @@ open(INFILE, "$gofile") || die("Couldn't read file $gofile\n");
 @go=<INFILE>;
 close INFILE;
 
-open(OUTFILE, ">>$out") || die("Couldn't open file $out\n"); 
+open(OUTFILE, ">$out") || die("Couldn't open file $out\n"); 
 print OUTFILE "function_id\t";
 print OUTFILE "function_name\t";
 print OUTFILE "namespace\t";

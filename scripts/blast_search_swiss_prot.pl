@@ -6,6 +6,7 @@
 #
 #Author: ZHENG WANG, June 10th, 2008.
 ###########################################################
+my $GLOBAL_PATH='/storage/htc/bdm/jh7x3/PDCN_github/pdcn/';
 
 use strict;
 if(@ARGV != 8){
@@ -62,7 +63,7 @@ while(<SEQALL>){
 
 			############parse the psiblast results#########################################
 		        my $list_file = "$output_dir"."/"."$id".".list";
-			my $parse_psiblast_command = "perl ./parse_blast_result.pl $output_dir"."/"."$id".".out"." $list_file";
+			my $parse_psiblast_command = "perl $GLOBAL_PATH/scripts/parse_blast_result.pl $output_dir"."/"."$id".".out"." $list_file";
 			print $parse_psiblast_command."\n";
 			print LOG "PARSE ".$parse_psiblast_command."\n";
 			`$parse_psiblast_command`;
