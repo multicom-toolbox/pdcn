@@ -69,14 +69,14 @@ perl scripts/get_function.pl ./test/2SN3-A/2SN3-A_function.txt ./database/go-bas
 
 output
 
-``
+```
 >2SN3-A
 KEGYLVKKSDGAKYGXLKLGENEGCDTEDKAKNQGGSYGYXYAFACWDEGLPESTPTYPLPNKSA
 GO:0005576; C:extracellular region; IEA:UniProtKB-SubCell.
 GO:0008200; F:ion channel inhibitor activity; IEA:InterPro.
 GO:0090729; F:toxin activity; IEA:UniProtKB-KW.
 GO:0006952; P:defense response; IEA:InterPro.
-``
+```
 
 
 **(F) Run everything**
